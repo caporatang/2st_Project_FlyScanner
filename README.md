@@ -24,8 +24,8 @@ YOUTUBE 5:22~7:58 : https://www.youtube.com/watch?v=OYlbSN_3hmE
   + 참여인원 : 5명  
   + 개발 환경 : Windows / macOS  
   + 사용 도구 : MacBook Pro, Eclipse, DBeaver, Slack, Notion
-  + 사용 기술 : JAVA, JDBC  ,ajax, JQuery, Spring MVC2 , ObjectAid, Apache Tomcat, 
-              ORACLE DB, draw.io, open API(google chart), HTML , CSS, JS
+  + 사용 기술 : JAVA, JDBC, ajax, JQuery, Spring MVC2, ObjectAid, Apache Tomcat, 
+              ORACLE DB, draw.io, open API(google chart), HTML, CSS, JS
 
 
 ## 사용 도구들 버전 
