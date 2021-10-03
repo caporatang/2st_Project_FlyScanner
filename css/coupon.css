@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+#coupon3 {
+    position: relative;
+    line-height: 23px;
+    color: #0A82FF;
+    font-size: 25px;
+}    
+#coupon {
+  
+	
+	height: 25px;
+	line-height: 23px;
+	font-size: 12px;
+	padding: 0 10px;
+	margin: 0;
+	color: #666;
+	background-color: #fff;
+	font-weight: 400;
+	text-align: center;
+	border-radius: 4px;
+	border: solid 1px #c2c2c2;
+	
+	min-width: 120px;
+	height: 46px;
+	line-height: 44px;
+	font-size: 15px;
+	color: #333;
+	padding: 0 30px;
+	
+	color: #fff ;
+	border: solid 1px #0A82FF;
+	background-color: #0A82FF;
+}    
+
+#couponW {
+    position: relative;
+    line-height: 23px;
+    color: red;
+    font-size: 30px;
+}    

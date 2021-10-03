@@ -1,0 +1,743 @@
+@charset "UTF-8";
+
+
+body {
+	-webkit-text-size-adjust: none;
+	font-size: 14px;
+	font-weight: 400;
+	color: #333;
+	word-break: break-all;
+	line-height: 1;
+	letter-spacing: -.4px;
+}
+
+body {
+	margin: 0;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
+	q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
+	th, td, article, aside, canvas, details, figcaption, figure, footer,
+	header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+
+.box_group {
+	margin-top: 0;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+em, address {
+	font-style: normal;
+}
+
+img, fieldset, iframe {
+	border: 0;
+}
+
+img {
+	max-width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+
+#wrapper {
+	min-width: 1200px;
+}
+
+#wrap {
+	min-width: 1200px;
+}
+
+p {
+	line-height: 1.5;
+}
+
+strong {
+	font-weight: 600;
+}
+
+#container>.inr {
+	width: 870px;
+	margin: 50px auto 0;
+}
+
+.contents {
+	min-height: 350px;
+}
+
+.icn {
+	display: inline-block;
+	position: relative;
+}
+
+.row {
+	display: table-row;
+}
+
+.cell {
+	display: table-cell;
+	width: 100%;
+	vertical-align: top;
+}
+
+.mt0 {
+	margin-top: 0px !important;
+}
+
+.mt40 {
+	margin-top: 40px !important;
+}
+
+.mb0 {
+	margin-bottom: 0px !important;
+}
+
+.pay_info .box_group {
+	margin-top: 39px;
+	padding: 24px;
+	border-width: 3px;
+}
+
+.pay_info.book_step1>.inr.right>.text_wrap.mid {
+	margin-bottom: -8px;
+}
+
+.pay_info.book_step1 .icn.air+.route_detail {
+	display: inline-block;
+	margin-left: 56px;
+	padding: 0;
+}
+
+.pay_info.book_step1 .icn.air+.route_detail .route strong {
+	color: #333;
+}
+
+.pay_info.book_step1 .flight_list+.list_bul.billiard {
+	margin-top: 20px;
+}
+
+.pay_info.book_step1 .flight_list>ul>li .cell.air {
+	width: 170px;
+	padding: 0 0 0 30px;
+}
+
+.pay_info.book_step1 .flight_list>ul>li .item_course .city>em {
+	color: #888;
+	font-size: 13px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.pay_info.book_step1 .flight_list>ul>li .cell.type {
+	width: 438px;
+	padding: 0 0 0 10px;
+}
+
+.pay_info.book_step1 .flight_list>ul>li .item_course .time {
+	width: 130px;
+}
+
+.pay_info.book_step1 .flight_list>ul>li .item_course .time>.date {
+	display: block;
+	font-size: 15px;
+	color: #333;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+
+.pay_info.book_step1 .flight_list>ul>li .item_course .move_arrow {
+	top: 0;
+}
+
+.pay_info.book_step1 .flight_list>ul>li .cell.luggage {
+	width: 120px;
+	text-align: center;
+	font-size: 15px;
+	color: #111;
+	padding: 0 30px 0 0;
+}
+
+.item_course .move_arrow {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	width: 14px;
+	height: 14px;
+	background-image:
+		url(https://image.hanatour.com/usr/static/img/pc/com/spr_air.png);
+	background-repeat: no-repeat;
+	font-size: 0;
+	position: relative;
+	top: -2px;
+}
+
+.gr {
+	color: #666 !important;
+}
+
+.btn_wrap {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.btn {
+	position: relative;
+	display: inline-block;
+	height: 25px;
+	line-height: 23px;
+	font-size: 12px;
+	padding: 0 10px;
+	margin: 0;
+	color: #666;
+	background-color: #fff;
+	font-weight: 400;
+	text-align: center;
+	border-radius: 4px;
+	border: solid 1px #c2c2c2;
+}
+
+.btn_wrap .btn {
+	min-width: 120px;
+	height: 46px;
+	line-height: 44px;
+	font-size: 15px;
+	color: #333;
+	padding: 0 30px;
+}
+
+span.btn, .btn:disabled {
+	border-color: #ccc;
+	background-color: transparent;
+	opacity: .5;
+}
+
+.btn.pink, .form_holder .btn.pink {
+	color: #fff !important;
+	border: solid 1px #0A82FF;
+	background-color: #0A82FF;
+}
+
+.btn.big {
+	min-width: 140px;
+	height: 56px;
+	line-height: 54px;
+	font-size: 17px;
+	padding: 0 35px;
+}
+
+.text_wrap {
+	position: relative;
+	margin: 40px 0 0;
+	padding: 0;
+}
+
+.text_wrap strong.tit {
+	display: inline-block;
+	font-size: 20px;
+	line-height: 1;
+	font-weight: 400;
+	color: #111;
+}
+
+.text_wrap.big {
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+
+.text_wrap.mid {
+	margin-top: 40px;
+	margin-bottom: 24px;
+}
+
+.text_wrap.sml {
+	margin-top: 24px;
+	margin-bottom: 18px;
+}
+
+.text_wrap.fix strong, .text_wrap.big strong.tit {
+	font-size: 22px;
+	font-weight: 600;
+	color: #111;
+}
+
+.text_wrap.sml strong.tit {
+	font-size: 15px;
+	font-weight: 400;
+	color: #111;
+}
+
+.text_wrap.mid+.cont_unit, .text_wrap.mid+.tbl, .text_wrap.mid+table,
+	.text_wrap.mid+.js_tabs, .text_wrap.mid+.prod_list_wrap, .text_wrap.mid+.prod_list_wrap,
+	.text_wrap+.text_box.udline, .text_wrap+.list_bul {
+	margin-top: -4px;
+}
+
+.list_bul>li {
+	position: relative;
+	padding-left: 10px;
+	line-height: 23px;
+	font-size: 13px;
+	color: #888;
+}
+
+.list_bul.gr>li {
+	color: #666;
+}
+
+.list_bul>li:first-child, .list_dash>li:first-child, .notice_wrap .list_bul>li
+	{
+	margin-top: 0;
+}
+
+.list_bul.billiard>li {
+	padding-left: 15px;
+	font-size: 13px;
+	color: #888;
+	line-height: 20px;
+	text-align: left;
+}
+
+p.txt, span.txt, .txt>li {
+	position: relative;
+	line-height: 23px;
+	color: #666;
+	font-size: 14px;
+}
+
+.tooltip {
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	position: relative;
+	margin-left: -1px;
+	top: 2px;
+	cursor: pointer;
+}
+
+.tooltip .tooltiptext, .form_wrap.major .label_checkbox .tooltiptext,
+	.coupon_area .coupon_list {
+	visibility: hidden;
+	min-width: 120px;
+	background-color: #fff;
+	border: 1px solid #999;
+	color: #111;
+	border-radius: 3px;
+	padding: 10px 14px;
+	position: absolute;
+	top: 170%;
+	left: 50%;
+	margin-left: -60px;
+	font-size: 12px;
+	line-height: 20px;
+	box-shadow: 0.8px 3.9px 8px 0 rgb(0 0 0/ 15%);
+	z-index: 10;
+	text-align: left;
+}
+
+.tooltip .tooltiptext {
+	min-width: 200px;
+}
+
+.tooltip.text {
+	width: auto;
+	margin: 0;
+	top: inherit;
+}
+
+.ly_wrap {
+	width: 100%;
+}
+
+.ly_wrap .inr {
+	width: 50%;
+	float: left;
+}
+
+.ly_wrap .inr.right {
+	float: right;
+}
+
+.row {
+	display: table;
+	width: 100%;
+}
+
+.row .cell {
+	display: table-cell;
+	width: 60%;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.js_acc {
+	border-top: 1px solid #eaeaea;
+}
+
+.air_name, .night_days, .air_info {
+	color: #333;
+}
+
+.air_name, .night_days, .move_arrow {
+	display: inline-block;
+}
+
+.move_arrow {
+	margin: 0 5px;
+}
+
+.move_arrow {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	text-indent: -99999px;
+	background-repeat: no-repeat;
+	background-image:
+		url(https://image.hanatour.com/usr/static/img/pc/com/spr_air.png);
+}
+
+.js_acc.filter_wrap {
+	margin-top: 0;
+}
+
+.box_group {
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+}
+
+.flight_list {
+	margin-top: 20px;
+}
+
+.flight_list>ul>li {
+	border: 1px solid #ddd;
+	border-top-color: #999;
+	position: relative;
+}
+
+.flight_list>ul>li .row {
+	height: 125px;
+	display: table-row;
+}
+
+.flight_list>ul>li .cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.flight_list>ul>li .cell.air {
+	width: 240px;
+	padding: 0 0 0 30px;
+}
+
+.flight_list>ul>li .cell.type {
+	width: 300px;
+	padding: 0 0 0 30px;
+}
+
+.flight_list>ul>li .cell.seat {
+	width: 140px;
+	text-align: center;
+	font-size: 15px;
+	color: #111;
+}
+
+.flight_list>ul>li .cell.air .txt {
+	font-size: 13px;
+	color: #888;
+	padding-left: 27px;
+}
+
+.flight_list>ul>li .cell.air .air_name {
+	font-size: 17px;
+	color: #111;
+	margin-bottom: 3px;
+	position: relative;
+	padding-left: 27px;
+	line-height: 1;
+}
+
+.flight_list>ul>li .cell.air .air_name img {
+	vertical-align: middle;
+	width: 20px;
+	height: 14px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 2px;
+}
+
+.flight_list>ul>li .item_course {
+	text-align: center;
+	display: table;
+	width: 387px;
+}
+
+.flight_list>ul>li .item_course .time {
+	font-size: 22px;
+	color: #111;
+	font-weight: 600;
+	display: table-cell;
+	vertical-align: middle;
+	width: 125px;
+}
+
+.flight_list>ul>li .item_course .city {
+	display: block;
+	font-size: 13px;
+	color: #479de7;
+	margin-top: 10px;
+	font-weight: 400;
+}
+
+.flight_list>ul>li .item_course .move_arrow {
+	position: relative;
+	width: 121px;
+	height: 54px;
+	top: 0;
+	background: none;
+	text-indent: 0;
+}
+
+.flight_list>ul>li .item_course .move_arrow .wait {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 120px;
+	margin-left: -60px;
+	font-size: 13px;
+	color: #479de7;
+}
+
+.flight_list>ul>li .item_course .move_arrow .load {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 120px;
+	margin-left: -60px;
+	font-size: 13px;
+	color: #888;
+	line-height: 1;
+}
+
+.flight_list>ul>li .item_course .tooltiptext {
+	min-width: 250px;
+	word-break: keep-all;
+	margin-left: -125px;
+	text-align: center;
+}
+
+.flight_list>ul>li .item_course .tooltiptext>span {
+	display: block;
+}
+
+.flight_list>ul>li .day {
+	color: #e7226e;
+	font-size: 14px;
+	position: relative;
+	top: -3px;
+}
+
+.ly_wrap.pay_info {
+	border-top: 2px solid #111;
+}
+
+.ly_wrap.pay_info>.inr {
+	width: 870px;
+}
+
+.ly_wrap.pay_info>.inr.right {
+	width: 306px;
+	-webkit-transition: bottom .3s ease-out;
+	-moz-transition: bottom .3s ease-out;
+	transition: bottom .3s ease-out;
+}
+
+.pay_info>.inr.right>.text_wrap.mid {
+	margin-bottom: -5px;
+}
+
+.pay_info>.inr.right .pay_area {
+	border-top: 1px solid #ddd;
+	padding: 15px 20px 20px;
+	background: #f7f7f7;
+	border-bottom: 1px solid #ddd;
+}
+
+.pay_info .lineb {
+	border-bottom: 1px solid #ddd;
+}
+
+.pay_info .js_acc.filter_wrap {
+	overflow: hidden;
+	overflow-y: auto;
+	margin-top: 25px;
+	border-top: none;
+}
+
+.pay_info .info_area:not(:first-child) {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px dashed #ddd;
+}
+
+.pay_info .info_area .info {
+	position: relative;
+	margin-top: 5px;
+	text-align: right;
+	color: #111;
+}
+
+.pay_info .info_area .info:first-child {
+	margin-top: 0;
+}
+
+.pay_info .info_area .mileage_save {
+	margin-top: 10px;
+	text-align: right;
+}
+
+.pay_info .info_area .mileage_save p {
+	font-size: 13px;
+	color: #666;
+}
+
+.pay_info .info_area.total .price {
+	display: block;
+	margin-top: 15px;
+	font-size: 26px;
+	color: #0A82FF;
+	text-align: right;
+}
+
+.pay_info .info_area.total .price span {
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.pay_info .info_area.total .info {
+	min-height: 14px;
+	margin-top: 0;
+	padding-bottom: 10px;
+}
+
+.route {
+	text-align: center;
+}
+
+.route .move_arrow {
+	width: 26px;
+	height: 26px;
+	background-position: -244px 0;
+}
+
+.route strong {
+	font-size: 34px;
+	color: #fff;
+	vertical-align: middle;
+}
+
+.route_detail {
+	padding: 0 0 40px 0;
+}
+
+.route_detail .route {
+	text-align: left;
+}
+
+.route_detail .route strong {
+	color: #111;
+	font-size: 17px;
+}
+
+.route_detail .move_arrow, .route_detail .route .move_arrow {
+	width: 14px;
+	height: 6px;
+	background-position: -1px -43px;
+}
+
+.row, .column, .flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tbl {
+    position: relative;
+}
+
+.tbl>.text_wrap {
+    margin-top: 0;
+}
+.tbl table {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    border-collapse: separate;
+    table-layout: fixed;
+    font-size: 15px;
+}
+.tbl th, .tbl td {
+    text-align: left;
+    min-height: 54px;
+    padding: 15px 20px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.tbl th {
+    background-color: #f7f7f7;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.tbl td {
+    color: #333;
+    font-size: 15px;
+}
+
+
+.tbl tbody {
+    position: relative;
+}
+
+.tbl table.type2 th {
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.tbl table.type2 tr:first-child th, .tbl .type2 tr:first-child td {
+    border-top: 1px solid #999;
+}
+
+
+.tbl table.type2 td {
+    border-top: 1px solid #ddd;
+}
+
+.w250 {
+    width: 220px !important;
+}
+
+input[type=text], input[type=number], input[type=date], input[type=password] {
+    height: 42px;
+    padding: 0 15px;
+    border: 1px solid #cdcdcd;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+button, input, select, textarea {
+    font: inherit;
+    margin: 0;
+}
+
+button, input, select {
+    overflow: visible;
+}
