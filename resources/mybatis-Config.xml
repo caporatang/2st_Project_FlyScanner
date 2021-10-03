@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+      <typeAlias type="com.fly.pro2.DTO.MemberDTO" alias="memberDTO"></typeAlias>
+      <typeAlias type="com.fly.pro2.DTO.HotelDTO" alias="hotelDTO"></typeAlias>
+      <typeAlias type="com.fly.pro2.DTO.AirDTO" alias="airDTO"></typeAlias>
+      <typeAlias type="com.fly.pro2.DTO.FaqDTO" alias="faqDTO"></typeAlias>
+      <typeAlias type="com.fly.pro2.DTO.QuestionDTO" alias="questionDTO"></typeAlias>
+      <typeAlias type="com.fly.pro2.DTO.HotelBookDTO" alias="hotelBookVO"></typeAlias>
+      <typeAlias type="com.fly.pro2.DTO.PlaneBookDTO" alias="planeBookVO"></typeAlias>
+      <typeAlias type="com.fly.pro2.DTO.AirDTO" alias="airVO"></typeAlias>
+   </typeAliases>
+   <mappers>
+      <mapper resource="mapper/memberMapper.xml" />
+      <mapper resource="mapper/hotelMapper.xml" />
+      <mapper resource="mapper/airMapper.xml" />
+      <mapper resource="mapper/faqMapper.xml" />
+      <mapper resource="mapper/questionMapper.xml" />
+      <mapper resource="mapper/hotelBookMapper.xml" />
+      <mapper resource="mapper/planeBookMapper.xml" />
+      <mapper resource="mapper/airMapper.xml" />
+   </mappers>
+</configuration>

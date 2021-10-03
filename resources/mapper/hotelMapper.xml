@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hotel">
+	<insert id="create" parameterType="hotelDTO">
+		insert into HOTEL values
+		(#{hid},#{hname},#{hregion},#{himage},
+		#{checkin},#{checkout},#{guestnum},#{roomsort},
+		#{stdprice},#{stdnum})
+	</insert>
+
+	<!-- select할때는 반드시 resultType을 넣어주어야. 로우를 어느 dto에 넣을지! -->
+	<select id="all" resultType="hotelDTO">
+		select * from HOTEL
+	</select>
+
+	<!-- 메인페이지 평점 정렬 리스트 -->
+	<select id="star" resultType="hotelDTO">
+		<!-- select절로 한번 감싸서 rownum으로 조건 주면 mysql의 limit과 동일한 결과가 됨! 안감싸면 bad grammer 
+			에러 -->
+		SELECT *
+		FROM (
+		SELECT *
+		FROM HOTEL h
+		ORDER BY TO_NUMBER(SUBSTR(HID, 12))
+		DESC
+		)
+		WHERE ROWNUM &lt;= 5
+	</select>
+
+	<!-- 전체검색, 이미지 컬럼 있는 행 가져오기 -->
+	<select id="first" resultType="hotelDTO">
+		select * from HOTEL where HIMAGE
+		IS NOT NULL
+	</select>
+
+	<select id="one" parameterType="hotelDTO" resultType="hotelDTO">
+		select *
+		from HOTEL where hid = #{hid}
+	</select>
+
+	<!-- 키워드, 날짜, 잔여객실수로 조건 검색 -->
+	<select id="key" parameterType="hotelDTO" resultType="hotelDTO">
+		<!-- DB에 있는 체크아웃 가능 날짜보다 입력한 체크아웃값이 작거나 같아야한다. -->
+		select * from HOTEL where (hregion like '%'||#{keyword}||'%') AND
+		(checkout &gt;= #{checkout}) AND (stdnum != 0)
+	</select>
+
+	<delete id="del" parameterType="hotelDTO">
+		delete from HOTEL where hid =
+		#{hid}
+	</delete>
+	<update id="up" parameterType="hotelDTO">
+		update HOTEL set
+		hname = #{hname},
+		himage = #{himage},
+		hregion = #{hregion},
+		checkin = #{checkin},
+		checkout = #{checkout},
+		guestnum = #{guestnum},
+		roomsort = #{roomsort},
+		stdprice = #{stdprice},
+		stdnum = #{stdnum}
+		htlat = #{htlat}
+		htlong = #{htlong}
+		where hid = #{hid}
+	</update>
+	<!-- stdnum 업데이트 -->
+	<update id="stdup" parameterType="hotelDTO">
+		update HOTEL set
+		stdnum = stdnum - #{stdnum}
+		where hid = #{hid}
+	</update>
+	<!-- 메인페이지 평점 정렬 리스트 -->
+   <select id="main" resultType="hotelDTO">
+      <!-- select절로 한번 감싸서 rownum으로 조건 주면 mysql의 limit과 동일한 결과가 됨! 안감싸면 bad grammer 
+         에러 -->
+      SELECT *
+      FROM (
+      SELECT *
+      FROM HOTEL h
+      ORDER BY TO_NUMBER(SUBSTR(HID, 12)) DESC
+      )
+      WHERE ROWNUM &lt;= 5
+   </select>
+</mapper>

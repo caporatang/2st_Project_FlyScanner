@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="faq">
+
+
+	<select id="faqBoard" resultType="faqDTO">
+		SELECT * FROM FAQ WHERE fkind
+		LIKE '%${1}%'
+	</select> <!-- faq 목록 출력하기 -->
+
+	<insert id="faqWrite" parameterType="faqDTO">
+		insert into FAQ values
+		(FAQ_NUM.NEXTVAL,#{fTitle},#{fContent},#{fKind})
+
+	</insert>
+
+	<delete id="faqDelete" parameterType="faqDTO">
+					delete from FAQ where FNO = #{fNo}
+	</delete>
+
+	<select id="faqUpdateRead" parameterType="faqDTO" resultType="faqDTO">
+			select * from FAQ where FNO = #{fNo}
+	</select>
+
+	<update id="faqUpdate" parameterType="faqDTO">
+		UPDATE FAQ SET
+			FTITLE = #{fTitle},
+			FCONTENT = #{fContent},
+			FKIND = #{fKind}
+			WHERE FNO = #{fNo}
+	</update>
+
+</mapper>

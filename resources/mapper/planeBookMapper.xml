@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="planeBookMapper">
+	<insert id="create" parameterType="planeBookVO">
+		insert into PLANEBOOK values (#{planeBookNo},#{ticketNo},#{id},#{ticketSt},#{ticketSp},#{stDate},#{spDate},#{people},#{total},#{kName},#{birth},#{gender},#{eFirth},#{eLast},#{tel},#{email},#{stm},#{sth},#{spm},#{sph})
+	</insert>
+	
+	<select id="searchOne" parameterType="planeBookVO" resultType="planeBookVO">
+		select * from PLANEBOOK where PLANEBOOKNO = #{planeBookNo}
+	</select>
+	
+</mapper> 

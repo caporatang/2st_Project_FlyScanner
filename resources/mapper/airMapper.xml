@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="air">
+<!-- 티켓 하나 찾기 -->	
+	<select id="one2" parameterType="airVO" resultType="airVO">
+		select * from AIR where id = #{ticketno}
+	</select>
+
+<!-- 	관리자모드 티켓 추가 -->
+	<insert id="aircreate" parameterType ="airVo">
+		insert into AIR values (#{ticketno}, #{ticketprice}, #{ticketst}, #{ticketsp}, #{stdate}, #{spdate}, #{people} )
+	</insert>
+<!-- 	관리자모드 티켓 삭제 -->
+	<delete id="airdelete"  parameterType="airVO">
+		delete from AIR  where ticketno = #{ticketno}
+	</delete>
+<!-- 	관리자모드 티켓 수정 -->
+	<update id="airupdate"  parameterType="airVO">
+		update AIR set 
+	 	ticketno = #{ticketno}, 
+	 	ticketprice= #{ticketprice}, 
+	 	ticketst = #{ticketst}, 
+	 	ticketsp = #{ticketsp}, 
+	 	stdate = #{stdate}, 
+	 	spdate = #{spdate}, 
+	 	people = #{people} 
+	 	WHERE ticketno = #{ticketno}
+	</update>
+	
+	<!-- 조건찾기  -->
+	<select id="one" parameterType="airVO" resultType="airVO">
+	select * from AIR where (ticketst like '%' || #{ticketst} ||'%') AND (ticketsp like '%' || #{ticketsp} ||'%')  AND (spdate like '%' || #{spdate} ||'%')  AND (stdate like '%' || #{stdate} ||'%') AND (people !=0)
+	</select>
+<!--   AND  (spdate &gt;=#{spdate}) AND(stdate &gt;=#{stdate}) --> 
+
+
+<!-- 	티켓 전체 -->
+	<select id="all" resultType="airVO">
+		select * from air
+	</select>
+	
+	
+<select id="main" resultType="airVO">
+  	SELECT * FROM(
+  		SELECT * 
+  		FROM AIR a 
+		ORDER BY TICKETPRICE ASC  	
+  	)
+  	WHERE ROWNUM &lt;= 3
+
+</select>
+	
+</mapper>

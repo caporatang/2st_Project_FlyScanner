@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<insert id="create" parameterType="memberDTO" >
+		insert into FMEMBER values (#{email},#{id},#{pw},#{enamef},#{enamel},#{kname},#{gender},#{birth},#{tel},#{country},#{coupon})
+	</insert>
+	
+	<select id="one" parameterType="memberDTO" resultType="int">
+		select count(*) from FMEMBER where ID = #{id}
+	</select>
+
+	<select id="login" parameterType="memberDTO" resultType="int">
+		select count(*) from FMEMBER where ID = #{id} AND PW = #{pw}
+	</select>
+	
+	<select id="sLogin" parameterType="memberDTO" resultType="String">
+		select PW from FMEMBER where ID = #{id}
+	</select>
+	
+	<select id="info" parameterType="memberDTO" resultType="memberDTO">
+		select*from FMEMBER where ID = #{id}
+	</select>
+	
+	<update id="update" parameterType="memberDTO" >
+		update FMEMBER SET
+		EMAIL = #{email},
+		KNAME = #{kname},
+		BIRTH = #{birth},
+		TEL = #{tel},
+		COUNTRY = #{country},
+		GENDER = #{gender},
+		ENAMEF = #{enamef},
+		ENAMEL = #{enamel}
+		where ID = #{id}
+	</update>	
+	
+	<update id="num" parameterType="memberDTO" >
+		update FMEMBER SET
+		TEL = #{tel}
+		where ID = #{id}
+	</update>	
+	
+		
+	<delete id="delete" parameterType="memberDTO">
+		delete from FMEMBER where ID = #{id}
+	</delete>
+	
+	<!-- kakao -->
+	<select id="kakao_check" parameterType="memberDTO" resultType="int">
+		select count(*) from FMEMBER where EMAIL = #{email}
+	</select>
+
+	<!-- kakao login -->
+	<select id="kakao_login" parameterType="memberDTO" resultType="memberDTO">
+		select * from FMEMBER where EMAIL = #{email}
+	</select>
+	
+	
+		
+</mapper>

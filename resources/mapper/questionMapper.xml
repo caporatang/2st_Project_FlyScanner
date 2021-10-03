@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="question">
+	
+	<insert id="questionWrite" parameterType="questionDTO">
+		insert into QUESTION values
+			(QUESTION_NUM4.NEXTVAL,#{qtitle},#{qcontent},#{qkind},sysdate,#{fk_seq, jdbcType = INTEGER},#{qid})
+	</insert>
+	
+	<insert id="answer" parameterType="questionDTO">
+	insert into QUESTION values
+	(QUESTION_NUM4.NEXTVAL,#{qtitle},#{qcontent},#{qkind, jdbcType=VARCHAR},sysdate,#{fk_seq},#{qid, jdbcType = VARCHAR})
+	</insert>
+	
+	 <select id="questionBoard" resultType="questionDTO">
+		<!-- SELECT QNO,QTITLE,QCONTENT,QDATE FROM QUESTION q ORDER BY QNO ASC -->
+		SELECT LPAD('',5*(LEVEL-1))||QTITLE QTITLE, QNO, QDATE, fk_seq FROM QUESTION
+		START WITH FK_SEQ = 0
+		CONNECT BY PRIOR QNO = FK_SEQ
+		ORDER SIBLINGS BY FK_SEQ ASC
+	</select>
+	
+	<!-- 차트에 넣을 데이터 카운트-->
+	<select id="chartPayment" resultType="int">
+	SELECT count(QKIND) FROM QUESTION q WHERE QKIND = 'payment'
+	</select>
+	<select id="chartReservation" resultType="int">
+	SELECT count(QKIND) FROM QUESTION q WHERE QKIND = 'reservation'
+	</select>
+	<select id="chartFeedback" resultType="int">
+	SELECT count(QKIND) FROM QUESTION q WHERE QKIND = 'feedback'
+	</select>
+	<select id="chartAirLine" resultType="int">
+	SELECT count(QKIND) FROM QUESTION q WHERE QKIND = 'airline'
+	</select>
+	<!-- 차트에 넣을 데이터 카운트  -->
+
+	<select id="questionInfo" parameterType="questionDTO"
+		resultType="questionDTO">
+		select * from QUESTION where QNO = #{qno}
+	</select>
+	
+	<select id="questionUpdateRead" parameterType="questionDTO"
+		resultType="questionDTO">
+		select * from QUESTION where QNO = #{qno}
+	</select>
+
+	<delete id="questionDelete" parameterType="questionDTO">
+		delete from QUESTION where QNO = #{qno}
+	</delete>
+	
+	 <update id="questionUpdate" parameterType="questionDTO">
+	UPDATE QUESTION SET 
+		QTITLE = #{qtitle},
+		QCONTENT = #{qcontent},
+		QKIND = #{qkind},
+		QDATE = sysdate
+			WHERE QNO = #{qno}
+	</update> 
+
+</mapper>

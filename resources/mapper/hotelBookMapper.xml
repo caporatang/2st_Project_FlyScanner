@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hotelBookMapper">
+	<insert id="create" parameterType="hotelBookVO">
+		insert into HOTELBOOK values (#{hotelBookNo},#{hId},#{id},#{hName},#{hRegion},#{checkIn},#{checkOut},#{guestNum},#{roomSort},#{kName},#{birth},#{gender},#{eFirth},#{eLast},#{tel},#{email},#{total})
+	</insert>
+	 
+	<select id="search" parameterType="hotelBookVO" resultType="hotelBookVO">
+		select * from FMEMBER where ID = #{id}
+	</select>
+	
+	<select id="searchOne" parameterType="hotelBookVO" resultType="hotelBookVO">
+		select * from HOTELBOOK where HOTELBOOKNO = #{hotelBookNo}
+	</select>
+	
+	<update id="couponUp" parameterType="hotelBookVO" >
+		update FMEMBER set COUPON = #{coupon} where ID = #{id}
+	</update>
+	
+</mapper> 
