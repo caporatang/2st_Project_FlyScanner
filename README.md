@@ -2,7 +2,7 @@
 ---
 # [2차 프로젝트 - spring프레임워크, openAPI를 활용한 항공, 호텔 예약 웹사이트 제작]
 PPT : https://docs.google.com/presentation/d/1Wxt6lJ0NJECSnj5RjB9Dx4ds6wiwFl9qXvmOQGmjfMU/edit?usp=sharing  
-YOUTUBE : https://www.youtube.com/watch?v=OYlbSN_3hmE 5:22~7:58
+YOUTUBE 5:22~7:58 : https://www.youtube.com/watch?v=OYlbSN_3hmE 
 
 ## <strong>프로젝트의 주요 목표</strong>
 ### 1.     SPRING 프레임 워크를 사용하여 고객센터 구현
